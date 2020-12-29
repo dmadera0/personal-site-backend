@@ -35,6 +35,23 @@ const msg = {
     text: req.body.message
 }
 
+sendGrid.send(msg)
+.then(result => {
+
+    res.status(200).json({
+        success: true
+    });
+
+})
+.catch(err => {
+
+    console.log('error: ', err);
+    res.status(401).json({
+        success: false
+    });
+
+});
+
 
 })
 
