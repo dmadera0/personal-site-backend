@@ -1,6 +1,6 @@
 const express = require('express');
 
-const bodyParser = require('bodyParser');
+const bodyParser = require('body-parser');
 
 const cors = require('cors');
 
@@ -20,3 +20,16 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     next();
 });
+
+app.get('/api', (req, res, next)=> {
+    res.send('API Status: Running')
+});
+
+app.post('/api/email', (req, res, next) =>{
+
+sendGrid.setApiKey('');
+
+})
+
+
+app.listen(2020, '0.0.0.0');
