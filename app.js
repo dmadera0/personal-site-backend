@@ -27,7 +27,14 @@ app.get('/api', (req, res, next)=> {
 
 app.post('/api/email', (req, res, next) =>{
 
-sendGrid.setApiKey('');
+sendGrid.setApiKey('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');
+const msg = {
+    to: 'dmadera0@gmail.com',
+    from: req.body.email,
+    subject: 'Website Contact',
+    text: req.body.message
+}
+
 
 })
 
